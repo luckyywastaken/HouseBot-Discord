@@ -24,7 +24,7 @@ setInterval(function(){
 },30000);
 });
 client.on('message', (message) => {
-	if (message.channel == null || message.member == null){
+	if (message.channel == null || message.member == null && !message.author.bot){
 		message.reply("I'm just a bot and can't respond to DMs");
 		return;
 	}
