@@ -31,18 +31,16 @@ client.on('message', (message) => {
 	if (!message.channel.nsfw && message.content.includes("https://") || message.content.includes("http://") || message.content.includes("www") || message.content.includes(".com") || message.content.includes(".net") || message.content.includes(".org") || message.content.includes(". com") || message.content.includes(". net") || message.content.includes(". org") ){
 		if (message.author.id != 299708692129906692 && message.author.id != 346507536389898250){
 			message.delete();
-			message.author.send({embed:{
+			var embed = {embed:{
 				title: "WARNING",
 				color: 16711680,
 				description: "Please do not post links without permission.",
 				footer: {
 					text: `Warned ${message.author.username} for posting links`,
 					icon_url: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`
-				},
-			}}).then((msg)=>{
-				wait(5);
-				msg.delete();
-			});
+				}
+			}};
+			message.author.send(embed).catch(function(err){message.channel.send(embed)});
 		};
 	};
 	if (!message.channel.nsfw && !message.author.bot){
@@ -53,18 +51,16 @@ client.on('message', (message) => {
 				} else
 				if (JSON.parse(body).result.includes("_filtered_-")){
 					message.delete();
-					message.author.send({embed:{
+					var embed = {embed:{
 						title: "WARNING",
 						color: 16711680,
 						description: "Your content has been determined as rule-breaking, and has therefore been deleted.",
 						footer: {
 							text: `Warned ${message.author.username} for swearing`,
 							icon_url: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`
-						},
-					}}).then((msg)=>{
-						wait(5);
-						msg.delete();
-					});
+						}
+					}};
+					message.author.send(embed).catch(function(err){message.channel.send(embed)});
 				};
 			});
 		} catch(error) {
