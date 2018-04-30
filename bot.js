@@ -28,7 +28,7 @@ client.on('message', (message) => {
 		message.reply("I'm just a bot and can't respond to DMs");
 		return;
 	}
-	if (message.channel.id == 402320341420212224) return;
+	if (message.channel.id == 402320341420212224 || message.channel.id == 397178804205912074) return;
 	if (!message.channel.nsfw && message.content.includes("https://") || message.content.includes("http://") || message.content.includes("www") || message.content.includes(".com") || message.content.includes(".net") || message.content.includes(".org") || message.content.includes(". com") || message.content.includes(". net") || message.content.includes(". org") ){
 		if (message.author.id != 299708692129906692 && message.author.id != 346507536389898250){
 			message.delete();
