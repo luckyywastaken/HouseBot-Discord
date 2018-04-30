@@ -20,7 +20,7 @@ function output(error, token) {
 client.on('ready', () => {
 setInterval(function(){
   //console.log('I am ready!');
-  client.user.setPresence({ game: { name: 'with house', type: 1 } });
+  client.user.setPresence({ game: { name: 'with housestan17', type: 1 } });
 },30000);
 });
 client.on('message', (message) => {
