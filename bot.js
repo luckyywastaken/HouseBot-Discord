@@ -46,7 +46,9 @@ client.on('message', (message) => {
 	};
 	if (!message.channel.nsfw && !message.author.bot){
 		try {
-			request(`http://www.purgomalum.com/service/json?text=${message.content}&fill_text=_filtered_-`, function (error, response, body){
+			var msg = message.content
+				.replace(/@\S+/, "");
+			request(`http://www.purgomalum.com/service/json?text=${msg}&fill_text=_filtered_-`, function (error, response, body){
 				if (error){
 					message.channel.send('I can\'t filter this message\n```' + error + '```');
 				} else
