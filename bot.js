@@ -27,12 +27,13 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 	var nick = newMember.nickname;
 	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")){
 		newMember.setNickname("HOISTER");
+		console.log("Oh noes, "+nick+" was hoisting!!");
 		var embed = {embed:{
 			title: "WARNING",
 			color: 16711680,
 			description: "Do not try to hoist your username on this server",
 			footer: {
-				text: `Warned ${message.author.username} for attempted hoisting`,
+				text: `Warned ${nick} for attempted hoisting`,
 				icon_url: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`
 			}
 		}};
@@ -41,12 +42,13 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 	nick = newMember.user.username;
 	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")){
 		newMember.setNickname("HOISTER");
+		console.log("Oh noes, "+nick+" was hoisting!!");
 		var embed = {embed:{
 			title: "WARNING",
 			color: 16711680,
 			description: "Do not try to hoist your username on this server",
 			footer: {
-				text: `Warned ${message.author.username} for attempted hoisting`,
+				text: `Warned ${nick} for attempted hoisting`,
 				icon_url: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`
 			}
 		}};
