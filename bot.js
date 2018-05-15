@@ -24,9 +24,10 @@ setInterval(function(){
 },30000);
 });
 client.on('guildMemberUpdate', (oldMember, newMember) => {
+	if (newMember.guild.id == 395371039779192842) return;
 	var nick = newMember.nickname;
 	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")){
-		newMember.setNickname("HOISTER");
+		newMember.setNickname("HOISTER").catch();
 		console.log("Oh noes, "+nick+" was hoisting!!");
 		var embed = {embed:{
 			title: "WARNING",
@@ -41,7 +42,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 	}
 	nick = newMember.user.username;
 	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")){
-		newMember.setNickname("HOISTER");
+		newMember.setNickname("HOISTER").catch();
 		console.log("Oh noes, "+nick+" was hoisting!!");
 		var embed = {embed:{
 			title: "WARNING",
