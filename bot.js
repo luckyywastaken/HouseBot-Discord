@@ -38,6 +38,20 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 		}};
 		newMember.send(embed).catch(function(err){newMember.send(embed)});
 	}
+	nick = newMember.user.username;
+	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")){
+		newMember.setNickname("HOISTER");
+		var embed = {embed:{
+			title: "WARNING",
+			color: 16711680,
+			description: "Do not try to hoist your username on this server",
+			footer: {
+				text: `Warned ${message.author.username} for attempted hoisting`,
+				icon_url: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`
+			}
+		}};
+		newMember.send(embed).catch(function(err){newMember.send(embed)});
+	}
 })
 client.on('message', (message) => {
 	if (message.channel == null || message.member == null && !message.author.bot){
