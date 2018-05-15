@@ -34,7 +34,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 			description: "Do not try to hoist your username on this server",
 			footer: {
 				text: `Warned ${nick} for attempted hoisting`,
-				icon_url: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`
+				icon_url: `https://cdn.discordapp.com/avatars/${newMember.user.id}/${newMember.user.avatar}.png`
 			}
 		}};
 		newMember.send(embed).catch(function(err){newMember.send(embed)});
@@ -49,7 +49,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 			description: "Do not try to hoist your username on this server",
 			footer: {
 				text: `Warned ${nick} for attempted hoisting`,
-				icon_url: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`
+				icon_url: `https://cdn.discordapp.com/avatars/${newMember.user.id}/${newMember.user.avatar}.png`
 			}
 		}};
 		newMember.send(embed).catch(function(err){newMember.send(embed)});
