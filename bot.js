@@ -38,7 +38,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 				icon_url: `https://cdn.discordapp.com/avatars/${newMember.user.id}/${newMember.user.avatar}.png`
 			}
 		}};
-		newMember.send(embed).catch(function(err){newMember.send(embed)});
+		newMember.send(embed).catch();
 	}
 	nick = newMember.user.username;
 	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")){
@@ -53,7 +53,7 @@ client.on('guildMemberUpdate', (oldMember, newMember) => {
 				icon_url: `https://cdn.discordapp.com/avatars/${newMember.user.id}/${newMember.user.avatar}.png`
 			}
 		}};
-		newMember.send(embed).catch(function(err){newMember.send(embed)});
+		newMember.send(embed).catch();
 	}
 })
 client.on('message', (message) => {
