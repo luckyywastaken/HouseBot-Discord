@@ -26,7 +26,7 @@ setInterval(function(){
 client.on('guildMemberUpdate', (oldMember, newMember) => {
 	if (newMember.guild.id == 395371039779192842) return;
 	var nick = newMember.nickname;
-	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")) || nick.startsWith("[") || nick.startsWith("]") || nick.startsWith("{") || nick.startsWith("}") || nick.startsWith("\") || nick.startsWith("/") || nick.startsWith(".") || nick.startsWith("?") || nick.startsWith("_") || nick.startsWith("-") || nick.startsWith("+") || nick.startsWith("=") || nick.startsWith("<") || nick.startsWith(">") || nick.startsWith(";") || nick.startsWith(":")){
+	if (nick.startsWith("!") || nick.startsWith("#") || nick.startsWith("^") || nick.startsWith("&") || nick.startsWith("*") || nick.startsWith("$") || nick.startsWith("%") || nick.startsWith("@")) || nick.startsWith("[") || nick.startsWith("]") || nick.startsWith("{") || nick.startsWith("}") || nick.startsWith("\\") || nick.startsWith("/") || nick.startsWith(".") || nick.startsWith("?") || nick.startsWith("_") || nick.startsWith("-") || nick.startsWith("+") || nick.startsWith("=") || nick.startsWith("<") || nick.startsWith(">") || nick.startsWith(";") || nick.startsWith(":")){
 		newMember.setNickname("HOISTER").catch();
 		console.log("Oh noes, "+nick+" was hoisting!!");
 		var embed = {embed:{
